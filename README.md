@@ -42,6 +42,6 @@ This reduce the number of view, action and even controller. We didn't resort to 
 9 - Rspec 
 For the next commit
 
-end
+Thank you for your attention
 
 
