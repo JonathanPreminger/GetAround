@@ -1,0 +1,17 @@
+<div class="container border border-dark rounded mt-3 p-5">
+  <%= form_for car do |f| %>
+  <%= car.name %>
+  <form>
+      <%= f.fields_for :rents, Rent.new  do |rent_form| %>
+        <p><%= rent_form.hidden_field :user_id, :value => current_user.id %></p>
+        <p><%= rent_form.hidden_field :start_rent, :value => @search_start_rent%></p>
+        <p><%= rent_form.hidden_field :end_rent, :value => @search_end_rent %></p>
+        <p>Chosse the number of km you plan to drive </p>
+        <div class="mb-3">
+          <p><%= rent_form.text_field :distance, placeholder: 'km' %></p>
+        </div>
+      <% end %>
+      <p><%= submit_tag "Rent", class:"btn btn-primary" %></p>
+  </form>
+  <% end %>
+</div>

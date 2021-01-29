@@ -1,0 +1,30 @@
+<div class="container border border-dark rounded mt-3 p-5">
+  <%= form_for @user do |f| %>
+  <form>
+      <%= f.fields_for :cars, Car.new  do |car_form| %>
+        <h4>Add a car</h4>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Name</label>
+          <p><%= car_form.text_field :name, class:"form-control", id:"exampleInputEmail1" %></p>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Price per km</label>
+          <p><%= car_form.text_field :price_per_km, class:"form-control", id:"exampleInputEmail1" %></p>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Price per day</label>
+          <p><%= car_form.text_field :price_per_day, class:"form-control", id:"exampleInputEmail1" %></p>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Available from</label>
+          <p><%= car_form.date_field :available_from, class:"form-control", id:"exampleInputEmail1" %></p>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Available to</label>
+          <p><%= car_form.date_field :available_to, class:"form-control", id:"exampleInputEmail1" %></p>
+        </div>
+      <% end %>
+      <p><%= submit_tag "SAVE",class:"btn btn-primary" %></p>
+  </form>
+  <% end %>
+</div>
