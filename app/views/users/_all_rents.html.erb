@@ -1,0 +1,15 @@
+<h4>All your rents</h4>
+<div class="d-flex justify-content-start">
+  <% @user.rents.each do |rent| %>
+    <div class="card me-3" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= rent.car.name %></h5>
+        <p class="card-text">Distance: <%= rent.distance %> km</p>
+        <p class="card-text">Start rent: <%= rent.start_rent %></p>
+        <p class="card-text">End rent: <%= rent.end_rent %></p>
+        <p class="card-text">Price: <%= rent.price %></p>
+        <p><%= link_to "Delete this rent", rent_path(rent), method: :delete, data:{confirm:"are your sure?"}%></p>
+      </div>
+    </div>
+  <% end %>
+</div>

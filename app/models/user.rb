@@ -6,6 +6,6 @@ class User < ApplicationRecord
 
   has_many :cars
   has_many :rents
-  
+
   accepts_nested_attributes_for :cars
 end

@@ -1,16 +1,5 @@
 <div class="container mt-3 p-5">
-  <%= form_tag cars_path, method: :get do %>
-    <h4>Find a car</h4>
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Start date</label>
-      <p><%= date_field_tag :search, params[:search], class:"form-control", id:"exampleInputEmail1" %></p>
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">End date</label>
-      <p><%= date_field_tag :search2, params[:search2], class:"form-control", id:"exampleInputEmail1" %></p>
-    </div>
-    <p><%= submit_tag "Car Search",class:"btn btn-primary" %></p>
-  <% end %>
+  <%= render "search" %>
 </div>
 
 <% if @results_search_car.nil? %>

@@ -1,0 +1,13 @@
+<h4>All your cars</h4>
+<div class="d-flex justify-content-start">
+  <% @user.cars.each do |car| %>
+    <div class="card me-3" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= car.name %></h5>
+        <p class="card-text">Price per km: <%= car.price_per_km %></p>
+        <p class="card-text">Price per day: <%= car.price_per_day %></p>
+        <p><%= link_to "Delete this car", car_path(car), method: :delete, data:{confirm:"are your sure?"}%></p>
+      </div>
+    </div>
+  <% end %>
+</div>
