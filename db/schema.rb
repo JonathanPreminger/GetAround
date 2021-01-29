@@ -10,19 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_28_093837) do
-
-  create_table "bookings", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "car_id", null: false
-    t.integer "distance"
-    t.date "start_rent"
-    t.date "end_rent"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["car_id"], name: "index_bookings_on_car_id"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 2021_01_29_031501) do
 
   create_table "cars", force: :cascade do |t|
     t.string "name"
@@ -45,6 +33,9 @@ ActiveRecord::Schema.define(version: 2021_01_28_093837) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "price"
+    t.integer "insurance"
+    t.integer "roadside_assistance"
+    t.integer "rest_goes_to_us"
     t.index ["car_id"], name: "index_rents_on_car_id"
     t.index ["user_id"], name: "index_rents_on_user_id"
   end
@@ -61,8 +52,6 @@ ActiveRecord::Schema.define(version: 2021_01_28_093837) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bookings", "cars"
-  add_foreign_key "bookings", "users"
   add_foreign_key "cars", "users"
   add_foreign_key "rents", "cars"
   add_foreign_key "rents", "users"

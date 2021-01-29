@@ -8,6 +8,11 @@
         <p class="card-text">Start rent: <%= rent.start_rent %></p>
         <p class="card-text">End rent: <%= rent.end_rent %></p>
         <p class="card-text">Price: <%= rent.price %></p>
+        <p class="card-text" style="font-size:12px">70 % of the price goes to the owner</p>
+        <p class="card-text" style="font-size:12px">and the remaining 30 % are split like this</p>
+        <p class="card-text">Insurance: <%= rent.insurance %></p>
+        <p class="card-text">Roadside assistance: <%= rent.roadside_assistance %></p>
+        <p class="card-text">Our commission: <%= rent.rest_goes_to_us %></p>
         <p><%= link_to "Delete this rent", rent_path(rent), method: :delete, data:{confirm:"are your sure?"}%></p>
       </div>
     </div>
