@@ -2,14 +2,14 @@
   <%= render "search" %>
 </div>
 
-<% if @results_search_car.nil? %>
+<% if @car_full_availibility.nil? %>
   <% Car.all.each do |car| %>
     <%= render "all_cars", car: car %>
   <% end %>
-<% elsif @results_search_car.empty? %>
+<% elsif @car_full_availibility.empty? %>
   <p>No car available for this period</p>
 <% else %>
-  <% @results_search_car.each do |car| %>
+  <% @car_full_availibility.each do |car| %>
     <%= render "results_search_car", car: car %>
   <% end %>
 <% end %>
