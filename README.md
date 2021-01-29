@@ -15,15 +15,17 @@ Choose a range anywhere in 2021 to access to all cars, and a range in 2025 will 
 4 - The search form
 The logic of the code was move from the cars_controller to a dedicate module
 The search form prevent the user to enter a date in the past, to enter a start_rent date after a end_rent date.
-After those first check, the search method check all car available to the two date wanted.
+After those first check, the search method check all cars available to the two date wanted.
+Then it check if those available cars are already rent on this period, and display in the same view the result.
 
-One unavoilable feature would be to check if no one rent the car on the same period.
-
-5 - The price
-The price is define just before the creation with a callbacks.
+5 - The price of the rent
+The price and the commission part is define just before the creation with a callbacks, 
 The price is based on two components, the price by day and the price by km.
 The logic of this code is, for the moment, in the rent model. But if things getting complex, 
-it would be relevant to move all the price logic in a dedicate module.
+it would be relevant to move all the price logic in a dedicate module or service.
+Also it could be relevant to create dedicate model to the three commission part.
+All of the commission are displayed in the rent card, this can be justified by a concern for transparency towards users, 
+but it should be discuss with the product owner.
 
 6 - Validations
 All model have validations, in order to have safe record in database. 
@@ -40,7 +42,7 @@ The nested attributes allow us to use some nested form in order to create a chil
 This reduce the number of view, action and even controller. We didn't resort to a rent controller.
 
 9 - Rspec 
-For the next commit
+On the next commit
 
 Thank you for your attention
 
